@@ -92,6 +92,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AsignaturasDeProfe.aspx" />
     <Content Include="changePassword.aspx" />
     <Content Include="Erregistratu.aspx" />
     <Content Include="alumno.aspx" />
@@ -103,6 +104,13 @@
     <Content Include="Egiaztatu.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsignaturasDeProfe.aspx.designer.vb">
+      <DependentUpon>AsignaturasDeProfe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AsignaturasDeProfe.aspx.vb">
+      <DependentUpon>AsignaturasDeProfe.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="changePassword.aspx.designer.vb">
       <DependentUpon>changePassword.aspx</DependentUpon>
     </Compile>
