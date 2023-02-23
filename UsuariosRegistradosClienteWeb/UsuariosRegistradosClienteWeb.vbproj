@@ -94,7 +94,7 @@
   <ItemGroup>
     <Content Include="changePassword.aspx" />
     <Content Include="Erregistratu.aspx" />
-    <Content Include="menua.aspx" />
+    <Content Include="alumno.aspx" />
     <Content Include="Profesor.aspx" />
     <Content Include="recoverPassword.aspx" />
     <Content Include="Web.config" />
@@ -117,11 +117,11 @@
       <DependentUpon>Erregistratu.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="menua.aspx.designer.vb">
-      <DependentUpon>menua.aspx</DependentUpon>
+    <Compile Include="alumno.aspx.designer.vb">
+      <DependentUpon>alumno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="menua.aspx.vb">
-      <DependentUpon>menua.aspx</DependentUpon>
+    <Compile Include="alumno.aspx.vb">
+      <DependentUpon>alumno.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />

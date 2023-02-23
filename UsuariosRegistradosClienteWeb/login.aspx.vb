@@ -28,7 +28,12 @@ Public Class WebForm2
             Dim c As String = rdr.Item("pasahitza")
             'TextBox3.Text = c
             If (c = b) Then
-                Response.Redirect("menua.aspx")
+                If (rdr.Item("tipo") = "alumno") Then
+                    Response.Redirect("alumno.aspx")
+                ElseIf (rdr.Item("tipo") = "profesor") Then
+                    Response.Redirect("Profesor.aspx")
+                End If
+
             Else
                 Label1.Text = "La contraseña no es la correcta"
             End If

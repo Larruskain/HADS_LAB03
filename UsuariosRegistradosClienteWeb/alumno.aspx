@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="menua.aspx.vb" Inherits="UsuariosRegistradosClienteWeb.menua" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="alumno.aspx.vb" Inherits="UsuariosRegistradosClienteWeb.menua" %>
 
 <!DOCTYPE html>
 

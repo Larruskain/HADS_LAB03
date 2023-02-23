@@ -68,6 +68,7 @@
                 <br />
                 DNI:<br />
                 <asp:TextBox ID="TextBox6" runat="server" CssClass="nuevoEstilo1" Width="294px"></asp:TextBox>
+                <asp:Label ID="Label6" runat="server" ForeColor="#CC0000"></asp:Label>
                 <br />
                 Código del grupo de trabajo:<br />
                 <asp:TextBox ID="TextBox9" runat="server" CssClass="nuevoEstilo1" Width="294px"></asp:TextBox>
@@ -86,6 +87,9 @@
         </div>
         <p style="margin-left: 40px">
             <asp:Label ID="Label2" runat="server" ForeColor="Blue"></asp:Label>
+        </p>
+        <p style="margin-left: 40px">
+            <asp:HyperLink ID="HyperLink1" runat="server" Visible="False">[HyperLink1]</asp:HyperLink>
         </p>
     </form>
 </body>
