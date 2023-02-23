@@ -95,6 +95,7 @@
     <Content Include="changePassword.aspx" />
     <Content Include="Erregistratu.aspx" />
     <Content Include="menua.aspx" />
+    <Content Include="Profesor.aspx" />
     <Content Include="recoverPassword.aspx" />
     <Content Include="Web.config" />
     <Content Include="Hasiera.aspx" />
@@ -155,6 +156,13 @@
     <Compile Include="login.aspx.vb">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profesor.aspx.designer.vb">
+      <DependentUpon>Profesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor.aspx.vb">
+      <DependentUpon>Profesor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="recoverPassword.aspx.designer.vb">
       <DependentUpon>recoverPassword.aspx</DependentUpon>
