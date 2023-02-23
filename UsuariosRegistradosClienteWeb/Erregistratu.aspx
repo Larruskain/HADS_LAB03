@@ -60,24 +60,11 @@
                 <asp:TextBox ID="TextBox3" runat="server" CssClass="nuevoEstilo1" Width="294px"></asp:TextBox>
                 <asp:Label ID="Label4" runat="server" ForeColor="#CC0000"></asp:Label>
                 <br />
-                Pregunta oculta:<br />
+                Tipo:<br />
                 <asp:TextBox ID="TextBox4" runat="server" CssClass="nuevoEstilo4" Width="294px"></asp:TextBox>
                 <br />
-                Respuesta:<br />
-                <asp:TextBox ID="TextBox5" runat="server" CssClass="nuevoEstilo1" Width="294px"></asp:TextBox>
-                <br />
-                DNI:<br />
-                <asp:TextBox ID="TextBox6" runat="server" CssClass="nuevoEstilo1" Width="294px"></asp:TextBox>
-                <asp:Label ID="Label6" runat="server" ForeColor="#CC0000"></asp:Label>
-                <br />
-                Código del grupo de trabajo:<br />
-                <asp:TextBox ID="TextBox9" runat="server" CssClass="nuevoEstilo1" Width="294px"></asp:TextBox>
-                <br />
-                Código de tu subgrupo:<br />
-                <asp:TextBox ID="TextBox10" runat="server" CssClass="nuevoEstilo1" Width="294px"></asp:TextBox>
-                <br />
                 Contraseña:<br />
-                <asp:TextBox ID="TextBox11" runat="server" CssClass="nuevoEstilo1" Width="294px"></asp:TextBox>
+                <asp:TextBox ID="TextBox5" runat="server" CssClass="nuevoEstilo1" Width="294px"></asp:TextBox>
                 <br />
                 <br />
                 <asp:Button ID="Button1" runat="server" Text="REGISTRARSE" Width="187px" />

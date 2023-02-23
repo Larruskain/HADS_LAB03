@@ -54,11 +54,11 @@ Public Class recoverPassword
             Else
                 Label1.Text = "La respuesta no es correcta"
             End If
-
+            Ad.CerrarConexion()
         Catch ex As Exception
             Label1.Text = "El usuario no es correcto"
         End Try
-        Ad.CerrarConexion()
+
     End Sub
 
     Protected Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged

@@ -25,23 +25,23 @@ Public Class WebForm2
             Else
                 GetInvHeaderValue = "No Records Returned"
             End If
-            Dim c As String = rdr.Item("pasahitza")
+            Dim c As String = rdr.Item("pass")
             'TextBox3.Text = c
             If (c = b) Then
-                If (rdr.Item("tipo") = "alumno") Then
+                If (rdr.Item("tipo") = "Alumno") Then
                     Response.Redirect("alumno.aspx")
-                ElseIf (rdr.Item("tipo") = "profesor") Then
+                ElseIf (rdr.Item("tipo") = "Profesor") Then
                     Response.Redirect("Profesor.aspx")
                 End If
 
             Else
                 Label1.Text = "La contraseña no es la correcta"
             End If
-
+            Ad.CerrarConexion()
         Catch ex As Exception
             Label1.Text = "El usuario no es el correcto"
         End Try
-        Ad.CerrarConexion()
+
 
     End Sub
 
