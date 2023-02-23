@@ -29,9 +29,9 @@ Public Class AccesoDatos
         End Try
     End Sub
 
-    Public Shared Function InsertarUsuario(ByVal pEmail As String, ByVal pIzena As String, ByVal pAbizena As String, ByVal pGalderaEzk As String, ByVal pErantzuna As String, ByVal pDni As Integer, ByVal pEgiaztatzeZbk As Integer, ByVal pEgiaztatua As Boolean, ByVal pLantaldeKodea As String, ByVal pAzpitaldeKodea As String, ByVal pErabiltzaileMota As String, ByVal pPass As String) As Integer
+    Public Shared Function InsertarUsuario(ByVal pEmail As String, ByVal pIzena As String, ByVal pAbizena As String, ByVal pNumConf As Integer, ByVal pConfirmado As Boolean, ByVal pTipo As String, ByVal pPass As String, ByVal pCodPass As Integer) As Integer
         Dim cmdErabiltzaileaTxertatu As SqlCommand
-        Dim strSQL As String = "INSERT INTO Erabiltzaileak ([email], [izena], [abizena], [galderaEzkutua], [erantzuna], [na], [egiaztatzeZenbakia], [egiaztatua], [lantaldeKodea], [azpitaldeKodea], [erabiltzaileMota], [pasahitza]) VALUES (@pEmail,@pIzena,@pAbizena,@pGalderaEzk,@pErantzuna,@pDni,@pEgiaztatzeZbk,@pEgiaztatua,@pLantaldeKodea,@pAzpitaldeKodea,@pErabiltzaileMota,@pPass)"
+        Dim strSQL As String = "INSERT INTO Usuario ([email], [nombre], [apellidos], [numconfir], [confirmado], [tipo], [pass], [codpass]) VALUES (@pEmail,@pIzena,@pAbizena,@pnumConfir,@pConfirmado,@pTipo,@pPass,@pCodPass)"
 
 
         Try
@@ -39,15 +39,12 @@ Public Class AccesoDatos
             cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pEmail", pEmail)
             cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pIzena", pIzena)
             cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pAbizena", pAbizena)
-            cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pGalderaEzk", pGalderaEzk)
-            cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pErantzuna", pErantzuna)
-            cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pDni", pDni)
-            cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pEgiaztatzeZbk", pEgiaztatzeZbk)
-            cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pEgiaztatua", pEgiaztatua)
-            cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pLantaldeKodea", pLantaldeKodea)
-            cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pAzpitaldeKodea", pAzpitaldeKodea)
-            cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pErabiltzaileMota", pErabiltzaileMota)
+            cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pnumConfir", pNumConf)
+            cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pConfirmado", pConfirmado)
+            cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pTipo", pTipo)
             cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pPass", pPass)
+            cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@pCodPass", pCodPass)
+
 
             Return cmdErabiltzaileaTxertatu.ExecuteNonQuery() 'saiatu INSERT-a exekutatzen
         Catch
@@ -58,7 +55,7 @@ Public Class AccesoDatos
 
     Public Shared Function InsertarUsuario2(ByVal pEmail As String, ByVal pIzena As String) As Integer
         Dim cmdErabiltzaileaTxertatu As SqlCommand
-        Dim strSQL As String = "INSERT INTO Erabiltzaileak ([email],[izena]) VALUES (@email,@izena)"
+        Dim strSQL As String = "INSERT INTO Usuario ([email],[izena]) VALUES (@email,@izena)"
         cmdErabiltzaileaTxertatu = New SqlCommand(strSQL, connection_DB_HADS)
         cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@email", pEmail)
         cmdErabiltzaileaTxertatu.Parameters.AddWithValue("@izena", pIzena)
@@ -73,7 +70,7 @@ Public Class AccesoDatos
 
     Public Shared Function ObtenerUsuario(ByVal pEmail As String) As SqlDataReader
         Dim cmdErabiltzaileaLortu As SqlCommand
-        Dim strSQL = "SELECT * FROM Erabiltzaileak WHERE (email = '" + pEmail + "')"
+        Dim strSQL = "SELECT * FROM Usuario WHERE (email = '" + pEmail + "')"
 
         Try
             cmdErabiltzaileaLortu = New SqlCommand(strSQL, connection_DB_HADS)
@@ -86,7 +83,7 @@ Public Class AccesoDatos
 
     Public Shared Function ComprobarUsuario(ByVal pEmail As String) As Integer
         Dim cmdErabiltzaileaAktualizatu As SqlCommand
-        Dim strSQL = "UPDATE Erabiltzaileak SET confirmado = 1 WHERE (email = '" + pEmail + "')"
+        Dim strSQL = "UPDATE Usuario SET confirmado = 1 WHERE (email = '" + pEmail + "')"
         Try
             cmdErabiltzaileaAktualizatu = New SqlCommand(strSQL, connection_DB_HADS)
             Return cmdErabiltzaileaAktualizatu.ExecuteNonQuery()
@@ -97,7 +94,7 @@ Public Class AccesoDatos
 
     Public Shared Function ModificarContraseñaUsuario(ByVal pEmail As String, ByVal pNewContraseña As String) As Integer
         Dim cmdErabiltzaileaAktualizatu As SqlCommand
-        Dim strSQL = "UPDATE Erabiltzaileak SET pass = '" + pNewContraseña + "' WHERE (email = '" + pEmail + "')"
+        Dim strSQL = "UPDATE Usuario SET pass = '" + pNewContraseña + "' WHERE (email = '" + pEmail + "')"
         Try
             cmdErabiltzaileaAktualizatu = New SqlCommand(strSQL, connection_DB_HADS)
             Return cmdErabiltzaileaAktualizatu.ExecuteNonQuery()
