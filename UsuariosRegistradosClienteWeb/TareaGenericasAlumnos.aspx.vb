@@ -7,10 +7,8 @@ Public Class TareaGenericasAlumnos
         Dim Ad As New UsuariosRegistrados.AccesoDatos()
         Ad.Conectar()
         Dim alumnoAsignaturas As SqlDataReader = Ad.ObtenerAsigDeAlumno(Session("email"))
-        Dim i As Integer = 0
         While (alumnoAsignaturas.Read())
-            DropDownList1.Items.Add(alumnoAsignaturas.GetValue(i))
-            i = i + 1
+            DropDownList1.Items.Add(alumnoAsignaturas.GetValue(0))
         End While
         Ad.CerrarConexion()
     End Sub

@@ -96,7 +96,7 @@ Public Class AccesoDatos
 
     Public Shared Function ObtenerAsigDeAlumno(ByVal pEmail As String) As SqlDataReader
         Dim cmdErabiltzaileaLortu As SqlCommand
-        Dim strSQL = "SELECT A.nombre FROM (EstudianteGrupo As EG INNER JOIN GrupoClase AS GC ON  EG.codigoGrupo = GC.codigo) INNER JOIN Asignatura AS A ON GC.codigoAsig=A.codigo WHERE (PG.email='" + pEmail + "')"
+        Dim strSQL = "SELECT A.nombre FROM (EstudianteGrupo As EG INNER JOIN GrupoClase AS GC ON  EG.grupo = GC.codigo) INNER JOIN Asignatura AS A ON GC.codigoAsig=A.codigo WHERE (EG.email='" + pEmail + "')"
 
         Try
             cmdErabiltzaileaLortu = New SqlCommand(strSQL, connection_DB_HADS)
