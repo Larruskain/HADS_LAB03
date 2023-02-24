@@ -36,6 +36,13 @@
             <br />
             <br />
             <asp:GridView ID="GridView1" runat="server">
+                <Columns>
+                    <asp:CommandField SelectText="Instanciar" ShowSelectButton="True" />
+                    <asp:BoundField HeaderText="Código" />
+                    <asp:BoundField HeaderText="Descripción" />
+                    <asp:BoundField HeaderText="Horas" />
+                    <asp:BoundField HeaderText="Tipo" />
+                </Columns>
             </asp:GridView>
         </div>
     </form>
