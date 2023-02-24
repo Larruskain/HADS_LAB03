@@ -31,6 +31,12 @@
         <div class="auto-style1">
             <asp:DropDownList ID="DropDownList1" runat="server">
             </asp:DropDownList>
+            <br />
+            <br />
+            <br />
+            <br />
+            <asp:GridView ID="GridView1" runat="server">
+            </asp:GridView>
         </div>
     </form>
 </body>

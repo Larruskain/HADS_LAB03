@@ -20,5 +20,10 @@ Public Class TareaGenericasAlumnos
         Dim tareas As SqlDataReader = Ad.ObtenerTareasAsignAlumno(Session("email"), codAsig)
 
 
+
+    End Sub
+
+    Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
+
     End Sub
 End Class
