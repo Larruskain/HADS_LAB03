@@ -107,12 +107,15 @@ Public Class AccesoDatos
     End Function
 
     Public Shared Function ObtenerTareasAsignAlumno(ByVal pEmail As String, ByVal pAsign As String) As SqlDataAdapter
-        Dim cmdErabiltzaileaLortu As SqlDataAdapter
+        Dim adap As New SqlDataAdapter
+        Dim cmdErabiltzaileaLortu As SqlCommand
         Dim strSQL = "SELECT TG.codigo,TG.descripcion,TG.hEstimadas,TG.tipoTarea FROM ((EstudianteGrupo As EG INNER JOIN GrupoClase AS GC ON  EG.grupo = GC.codigo) INNER JOIN Asignatura AS A ON GC.codigoAsig=A.codigo) INNER JOIN TareaGenerica AS TG ON TG.codAsig = A.codigo WHERE (EG.email='" + pEmail + "') AND (A.Codigo= '" + pAsign + "') AND WHERE (TG.Explotacion= " + 0 + ")"
 
         Try
-            cmdErabiltzaileaLortu = New SqlDataAdapter(strSQL, connection_DB_HADS)
-            Return (cmdErabiltzaileaLortu)
+            cmdErabiltzaileaLortu = New SqlCommand(strSQL)
+            cmdErabiltzaileaLortu.Connection = connection_DB_HADS
+            adap.SelectCommand = cmdErabiltzaileaLortu
+            Return adap
         Catch ex As Exception
             Throw New ObtenerUsuarioError()
         End Try
