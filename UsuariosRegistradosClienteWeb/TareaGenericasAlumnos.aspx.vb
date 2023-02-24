@@ -17,11 +17,14 @@ Public Class TareaGenericasAlumnos
     Protected Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
         Dim codAsig = DropDownList1.SelectedValue
         Dim Ad As New UsuariosRegistrados.AccesoDatos()
-        Dim tareas As SqlDataReader = Ad.ObtenerTareasAsignAlumno(Session("email"), codAsig)
-        Dim dt As New DataTable
-        dt.Columns.AddRange(New DataColumn() {New DataColumn("Código", GetType(String)), New DataColumn("Descripción", GetType(String)), New DataColumn("Horas Estimadas", GetType(Integer)), New DataColumn("Tipo", GetType(String))})
-        dt.Rows.Add(tareas.GetValue(0))
-
+        Dim tareas As SqlDataAdapter = Ad.ObtenerTareasAsignAlumno(Session("email"), codAsig)
+        Dim tareasDataSet As New DataSet
+        tareas.Fill(tareasDataSet)
+        Dim tareasDataTable As DataTable = tareasDataSet.Tables(0)
+        Dim tareasView = New DataView(tareasDataTable)
+        tareasView.RowFilter = "codigo LIKE '%" & codAsig & "`%'"
+        GridView1.DataSource = tareasView
+        GridView1.DataBind()
 
     End Sub
 
