@@ -14,6 +14,11 @@ Public Class TareaGenericasAlumnos
     End Sub
 
     Protected Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
+        Dim codAsig = DropDownList1.SelectedValue
+        Dim Ad As New UsuariosRegistrados.AccesoDatos()
+        Ad.Conectar()
+        Dim tareas As SqlDataReader = Ad.ObtenerTareasAsignAlumno(Session("email"), codAsig)
+
 
     End Sub
 End Class

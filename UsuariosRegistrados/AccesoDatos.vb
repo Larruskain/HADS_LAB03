@@ -96,7 +96,7 @@ Public Class AccesoDatos
 
     Public Shared Function ObtenerAsigDeAlumno(ByVal pEmail As String) As SqlDataReader
         Dim cmdErabiltzaileaLortu As SqlCommand
-        Dim strSQL = "SELECT A.nombre FROM (EstudianteGrupo As EG INNER JOIN GrupoClase AS GC ON  EG.grupo = GC.codigo) INNER JOIN Asignatura AS A ON GC.codigoAsig=A.codigo WHERE (EG.email='" + pEmail + "')"
+        Dim strSQL = "SELECT A.codigo FROM (EstudianteGrupo As EG INNER JOIN GrupoClase AS GC ON  EG.grupo = GC.codigo) INNER JOIN Asignatura AS A ON GC.codigoAsig=A.codigo WHERE (EG.email='" + pEmail + "')"
 
         Try
             cmdErabiltzaileaLortu = New SqlCommand(strSQL, connection_DB_HADS)
@@ -105,6 +105,19 @@ Public Class AccesoDatos
             Throw New ObtenerUsuarioError()
         End Try
     End Function
+
+    Public Shared Function ObtenerTareasAsignAlumno(ByVal pEmail As String, ByVal pAsign As String) As SqlDataReader
+        Dim cmdErabiltzaileaLortu As SqlCommand
+        Dim strSQL = "SELECT TG.codigo,TG.descripcion,TG.hEstimadas,TG.tipoTarea FROM ((EstudianteGrupo As EG INNER JOIN GrupoClase AS GC ON  EG.grupo = GC.codigo) INNER JOIN Asignatura AS A ON GC.codigoAsig=A.codigo) INNER JOIN TareaGenerica AS TG ON TG.codAsig = A.codigo WHERE (EG.email='" + pEmail + "') AND (A.Codigo= '" + pAsign + "')"
+
+        Try
+            cmdErabiltzaileaLortu = New SqlCommand(strSQL, connection_DB_HADS)
+            Return (cmdErabiltzaileaLortu.ExecuteReader())
+        Catch ex As Exception
+            Throw New ObtenerUsuarioError()
+        End Try
+    End Function
+
     Public Shared Function ComprobarUsuario(ByVal pEmail As String) As Integer
         Dim cmdErabiltzaileaAktualizatu As SqlCommand
         Dim strSQL = "UPDATE Usuario SET confirmado = 1 WHERE (email = '" + pEmail + "')"
