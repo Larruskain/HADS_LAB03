@@ -52,8 +52,6 @@
             <br />
             <br />
             <br />
-            <br />
-            <br />
             <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Gestión Web de Tareas-Dedicación"></asp:Label>
             <br />
             <br />
