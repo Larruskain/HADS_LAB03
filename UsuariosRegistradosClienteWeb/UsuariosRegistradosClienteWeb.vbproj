@@ -97,8 +97,11 @@
     <Content Include="changePassword.aspx" />
     <Content Include="Erregistratu.aspx" />
     <Content Include="alumno.aspx" />
+    <Content Include="GruposAlumnos.aspx" />
     <Content Include="Profesor.aspx" />
     <Content Include="recoverPassword.aspx" />
+    <Content Include="TareaGenericasAlumnos.aspx" />
+    <Content Include="TareasPropiasAlumnos.aspx" />
     <Content Include="Web.config" />
     <Content Include="Hasiera.aspx" />
     <Content Include="login.aspx" />
@@ -131,6 +134,13 @@
     </Compile>
     <Compile Include="alumno.aspx.vb">
       <DependentUpon>alumno.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="GruposAlumnos.aspx.designer.vb">
+      <DependentUpon>GruposAlumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GruposAlumnos.aspx.vb">
+      <DependentUpon>GruposAlumnos.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -185,6 +195,20 @@
     </Compile>
     <Compile Include="Egiaztatu.aspx.vb">
       <DependentUpon>Egiaztatu.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="TareaGenericasAlumnos.aspx.designer.vb">
+      <DependentUpon>TareaGenericasAlumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TareaGenericasAlumnos.aspx.vb">
+      <DependentUpon>TareaGenericasAlumnos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="TareasPropiasAlumnos.aspx.designer.vb">
+      <DependentUpon>TareasPropiasAlumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TareasPropiasAlumnos.aspx.vb">
+      <DependentUpon>TareasPropiasAlumnos.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

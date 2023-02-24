@@ -36,20 +36,31 @@
             <br />
             <br />
             <br />
-            <asp:HyperLink ID="HyperLink1" runat="server">Tareas Genéricas</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/TareaGenericasAlumnos.aspx">Tareas Genéricas</asp:HyperLink>
             <br />
             <br />
-             <asp:HyperLink ID="HyperLink2" runat="server">Tareas Propias</asp:HyperLink>
+             <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/TareasPropiasAlumnos.aspx">Tareas Propias</asp:HyperLink>
             <br />
             <br />
-             <asp:HyperLink ID="HyperLink3" runat="server">Grupos</asp:HyperLink>
+             <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/GruposAlumnos.aspx">Grupos</asp:HyperLink>
             <br />
             <br />
             <br />
             <br />
         </div>
         <div class="content">
-
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Gestión Web de Tareas-Dedicación"></asp:Label>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Alumnos"></asp:Label>
         </div>
         <p>
             &nbsp;</p>
