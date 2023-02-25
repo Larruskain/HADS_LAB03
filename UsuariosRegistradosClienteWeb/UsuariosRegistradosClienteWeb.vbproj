@@ -99,6 +99,7 @@
     <Content Include="alumno.aspx" />
     <Content Include="GruposAlumnos.aspx" />
     <Content Include="Profesor.aspx" />
+    <Content Include="ProfesorTareas.aspx" />
     <Content Include="recoverPassword.aspx" />
     <Content Include="TareaGenericasAlumnos.aspx" />
     <Content Include="TareasPropiasAlumnos.aspx" />
@@ -181,6 +182,13 @@
     </Compile>
     <Compile Include="Profesor.aspx.vb">
       <DependentUpon>Profesor.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ProfesorTareas.aspx.designer.vb">
+      <DependentUpon>ProfesorTareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfesorTareas.aspx.vb">
+      <DependentUpon>ProfesorTareas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="recoverPassword.aspx.designer.vb">
