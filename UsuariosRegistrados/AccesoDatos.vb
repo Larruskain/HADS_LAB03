@@ -80,19 +80,17 @@ Public Class AccesoDatos
         End Try
 
     End Function
+    'Dim ds As New DataSet
+    'Public Shared Function ObtenerAsigDeProf(ByVal pEmail As String) As SqlDataReader
+    ' Dim cmdErabiltzaileaLortu As SqlCommand
+    'Using cnn As New SqlConnection("Server=tcp:hads1.database.windows.net,1433;Initial Catalog=SGTA2023;Persist Security Info=False;User ID=elarruscain003@ikasle.ehu.eus@hads1;Password=enekojoanes_HADS;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
+    '       cnn.Open()
+    'Dim adapter As New SqlDataAdapter("SELECT A.nombre FROM (ProfesorGrupo As PG INNER JOIN GrupoClase AS GC ON  PG.codigoGrupo = GC.codigo) INNER JOIN Asignatura AS A ON GC.codigoAsig=A.codigo WHERE (PG.email='" + pEmail + "')")
+    '       adapter.Fill(ds)
+    '
 
-    Public Shared Function ObtenerAsigDeProf(ByVal pEmail As String) As SqlDataReader
-        Dim cmdErabiltzaileaLortu As SqlCommand
-        Dim strSQL = "SELECT A.nombre FROM (ProfesorGrupo As PG INNER JOIN GrupoClase AS GC ON  PG.codigoGrupo = GC.codigo) INNER JOIN Asignatura AS A ON GC.codigoAsig=A.codigo WHERE (PG.email='" + pEmail + "')"
-
-        Try
-            cmdErabiltzaileaLortu = New SqlCommand(strSQL, connection_DB_HADS)
-            Return (cmdErabiltzaileaLortu.ExecuteReader())
-        Catch ex As Exception
-            Throw New ObtenerUsuarioError()
-        End Try
-
-    End Function
+    'End Using
+    'End Function
 
     Public Shared Function ObtenerAsigDeAlumno(ByVal pEmail As String) As SqlDataReader
         Dim cmdErabiltzaileaLortu As SqlCommand
