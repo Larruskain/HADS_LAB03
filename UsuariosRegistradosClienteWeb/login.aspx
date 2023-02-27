@@ -25,7 +25,7 @@
         Introduzca la contraseña:<br />
         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Entrar" />
+        <asp:Button ID="Button1" runat="server" Text="Entrar" style="height: 35px" />
         <asp:Label ID="Label1" runat="server" ForeColor="#CC0000"></asp:Label>
         <br />
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Erregistratu.aspx">Registrarse</asp:HyperLink>
