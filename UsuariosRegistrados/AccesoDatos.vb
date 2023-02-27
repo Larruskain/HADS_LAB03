@@ -106,10 +106,10 @@ Public Class AccesoDatos
         End Try
     End Function
 
-    Public Shared Function ObtenerTareasAsignAlumno(ByVal pEmail As String, ByVal pAsign As String) As SqlDataAdapter
+    Public Shared Function ObtenerTareasAsignAlumno(ByVal pEmail As String) As SqlDataAdapter
         Dim adap As New SqlDataAdapter
         Dim cmdErabiltzaileaLortu As SqlCommand
-        Dim strSQL = "SELECT TG.codigo,TG.descripcion,TG.hEstimadas,TG.tipoTarea FROM ((EstudianteGrupo As EG INNER JOIN GrupoClase AS GC ON  EG.grupo = GC.codigo) INNER JOIN Asignatura AS A ON GC.codigoAsig=A.codigo) INNER JOIN TareaGenerica AS TG ON TG.codAsig = A.codigo WHERE (EG.email='" + pEmail + "') AND (A.Codigo= '" + pAsign + "') AND WHERE (TG.Explotacion= " + 0 + ")"
+        Dim strSQL = "SELECT TG.codigo,TG.descripcion,TG.hEstimadas,TG.tipoTarea FROM ((EstudianteGrupo As EG INNER JOIN GrupoClase AS GC ON  EG.grupo = GC.codigo) INNER JOIN Asignatura AS A ON GC.codigoAsig=A.codigo) INNER JOIN TareaGenerica AS TG ON TG.codAsig = A.codigo WHERE (EG.email='" + pEmail + "')"
 
         Try
             cmdErabiltzaileaLortu = New SqlCommand(strSQL)
