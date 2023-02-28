@@ -38,8 +38,16 @@
             <strong>Horas Reales&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="TextBox4" runat="server" BackColor="#CCCCCC"></asp:TextBox>
             </strong>
         </p>
+    <p>
+        &nbsp;&nbsp;</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <strong>
+        <asp:Button ID="Button2" runat="server" Text="Pagina anterior" />
+            </strong>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="Button1" runat="server" Text="Crear Tarea" />
     </form>
     <p>
-        &nbsp;</p>
+&nbsp;</p>
 </body>
 </html>
