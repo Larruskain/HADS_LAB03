@@ -29,8 +29,13 @@
         <p>
 &nbsp;<strong>Seleccionar Asignatura(solo se muestrán aquellas en las que está matriculado):</strong></p>
         <div class="auto-style1">
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="codigo" DataValueField="codigo">
             </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SGTA2023ConnectionString %>" SelectCommand="SELECT A.codigo FROM (EstudianteGrupo As EG INNER JOIN GrupoClase AS GC ON  EG.grupo = GC.codigo) INNER JOIN Asignatura AS A ON GC.codigoAsig=A.codigo WHERE (EG.email=@email)">
+                <SelectParameters>
+                    <asp:SessionParameter Name="email" SessionField="email" />
+                </SelectParameters>
+            </asp:SqlDataSource>
             <br />
             <br />
             <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="codigo">
