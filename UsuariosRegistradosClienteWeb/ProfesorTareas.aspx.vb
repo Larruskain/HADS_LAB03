@@ -7,5 +7,11 @@ Public Class ProfesorTareas
 
     End Sub
 
+    Protected Sub GridView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView2.SelectedIndexChanged
 
+    End Sub
+
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Response.Redirect("InsertarTareaProfe.aspx")
+    End Sub
 End Class

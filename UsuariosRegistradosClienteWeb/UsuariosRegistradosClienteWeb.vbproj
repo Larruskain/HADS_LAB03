@@ -98,6 +98,7 @@
     <Content Include="Erregistratu.aspx" />
     <Content Include="alumno.aspx" />
     <Content Include="GruposAlumnos.aspx" />
+    <Content Include="InsertarTareaProfe.aspx" />
     <Content Include="Profesor.aspx" />
     <Content Include="ProfesorTareas.aspx" />
     <Content Include="recoverPassword.aspx" />
@@ -142,6 +143,13 @@
     </Compile>
     <Compile Include="GruposAlumnos.aspx.vb">
       <DependentUpon>GruposAlumnos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="InsertarTareaProfe.aspx.designer.vb">
+      <DependentUpon>InsertarTareaProfe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarTareaProfe.aspx.vb">
+      <DependentUpon>InsertarTareaProfe.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
