@@ -41,11 +41,11 @@ Public Class TareasPropiasAlumnos
         ' dapMbrs.Update(dstMbrs, "EstudianteTarea")
         ' dstMbrs.AcceptChanges()
 
-        Dim strCommand As String = "insert into EstudianteTarea values('" & TextBox1.Text & "','" & TextBox2.Text & "','" & TextBox3.Text & "'," & TextBox4.Text & "')"
+        Dim strCommand As String = "insert into EstudianteTarea values('" & TextBox1.Text & "','" & TextBox2.Text & "'," & TextBox3.Text & "," & TextBox4.Text & ")"
         Dim command As SqlCommand = New SqlCommand(strCommand, conClsf)
         command.CommandType = CommandType.Text
         conClsf.Open()
         Dim a As Integer = command.ExecuteNonQuery()
-        conClsf.Close()
+
     End Sub
 End Class
