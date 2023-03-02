@@ -34,17 +34,16 @@
                 </SelectParameters>
             </asp:SqlDataSource>
             <br />
-            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="codigo" DataSourceID="SqlDataSource2">
+            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="codigo" DataSourceID="SqlDataSource2" AllowSorting="True" AutoGenerateEditButton="True">
                 <Columns>
-                    <asp
                     <asp:BoundField DataField="codigo" HeaderText="codigo" ReadOnly="True" SortExpression="codigo" />
                     <asp:BoundField DataField="descripcion" HeaderText="descripcion" SortExpression="descripcion" />
                     <asp:BoundField DataField="hEstimadas" HeaderText="hEstimadas" SortExpression="hEstimadas" />
-                    <asp:CheckBoxField DataField="Explotacion" HeaderText="Explotacion" SortExpression="Explotacion" />
+                    <asp:CheckBoxField DataField="explotacion" HeaderText="explotacion" SortExpression="explotacion" />
                     <asp:BoundField DataField="tipoTarea" HeaderText="tipoTarea" SortExpression="tipoTarea" />
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SGTA2023ConnectionString %>" SelectCommand="SELECT A.codigo,GC.descripcion,TG.hEstimadas,TG.Explotacion,TG.tipoTarea  FROM ((ProfesorGrupo As PG INNER JOIN GrupoClase AS GC ON  PG.codigoGrupo = GC.codigo) INNER JOIN Asignatura AS A ON GC.codigoAsig=A.codigo) INNER JOIN TareaGenerica AS TG ON A.codigo=TG.codAsig WHERE (PG.email=@email AND A.nombre=@nombre)">
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SGTA2023ConnectionString %>" SelectCommand="SELECT A.codigo, GC.descripcion, TG.hEstimadas, TG.explotacion, TG.tipoTarea FROM ProfesorGrupo AS PG INNER JOIN GrupoClase AS GC ON PG.codigoGrupo = GC.codigo INNER JOIN Asignatura AS A ON GC.codigoAsig = A.codigo INNER JOIN TareaGenerica AS TG ON A.codigo = TG.codAsig WHERE (PG.email = @email) AND (A.nombre = @nombre)">
                 <SelectParameters>
                     <asp:SessionParameter Name="email" SessionField="email" />
                     <asp:ControlParameter ControlID="DropDownList1" Name="nombre" PropertyName="SelectedValue" />
