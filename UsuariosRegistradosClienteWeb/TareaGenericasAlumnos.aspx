@@ -38,7 +38,14 @@
             </asp:SqlDataSource>
             <br />
             <br />
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="codigo" DataSourceID="SqlDataSource1">
+                <Columns>
+                    <asp:CommandField ButtonType="Button" SelectText="Instanciar" ShowHeader="True" ShowSelectButton="True" />
+                    <asp:BoundField DataField="codigo" HeaderText="codigo" ReadOnly="True" SortExpression="codigo" />
+                    <asp:BoundField DataField="descripcion" HeaderText="descripcion" SortExpression="descripcion" />
+                    <asp:BoundField DataField="hEstimadas" HeaderText="hEstimadas" SortExpression="hEstimadas" />
+                    <asp:BoundField DataField="tipoTarea" HeaderText="tipoTarea" SortExpression="tipoTarea" />
+                </Columns>
             </asp:GridView>
             <br />
             <br />

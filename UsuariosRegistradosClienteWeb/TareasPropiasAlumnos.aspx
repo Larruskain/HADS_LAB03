@@ -10,6 +10,9 @@
         .auto-style2 {
             margin-left: 80px;
         }
+        .auto-style3 {
+            margin-left: 680px;
+        }
     </style>
 </head>
 <body>
@@ -46,8 +49,25 @@
             </strong>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button1" runat="server" Text="Crear Tarea" />
+        <br />
+        <br />
+        <br />
+&nbsp;
+        <div class="auto-style3">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="email,codTarea" DataSourceID="SqlDataSource1">
+                <Columns>
+                    <asp:BoundField DataField="email" HeaderText="email" ReadOnly="True" SortExpression="email" />
+                    <asp:BoundField DataField="codTarea" HeaderText="codTarea" ReadOnly="True" SortExpression="codTarea" />
+                    <asp:BoundField DataField="hEstimadas" HeaderText="hEstimadas" SortExpression="hEstimadas" />
+                    <asp:BoundField DataField="hReales" HeaderText="hReales" SortExpression="hReales" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SGTA2023ConnectionString %>" SelectCommand="SELECT * FROM [EstudianteTarea] WHERE ([email] = @email)">
+                <SelectParameters>
+                    <asp:SessionParameter Name="email" SessionField="email" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+        </div>
     </form>
-    <p>
-&nbsp;</p>
-</body>
+    </body>
 </html>
